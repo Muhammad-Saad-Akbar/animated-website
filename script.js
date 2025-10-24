@@ -193,35 +193,35 @@ function animationOnThirdSection() {
 }
 
 // About section animation
-function animationOnAboutSection() {
-    gsap.from('#about_section', {
-        opacity: 0,
-        duration: 1,
-        scrollTrigger: {
-            trigger: '#content',
-            start: '90% top',
-            markers: true,
-            scroller: '#main'
-        }
-    })
-}
+// function animationOnAboutSection() {
+//     gsap.from('#about_section', {
+//         opacity: 0,
+//         duration: 1,
+//         scrollTrigger: {
+//             trigger: '#content',
+//             start: '90% top',
+//             markers: true,
+//             scroller: '#main'
+//         }
+//     })
+// }
 // Subscribe section animation
-function animationOnSubscribeSection() {
-    gsap.from('#subscribe', {
-        opacity: 0,
-        duration: 1,
-        scrollTrigger: {
-            trigger: '#companies_logo',
-            start: 'center top',
-            markers: true,
-            scroller: '#main'
-        }
-    })
-}
+// function animationOnSubscribeSection() {
+//     gsap.from('#subscribe', {
+//         opacity: 0,
+//         duration: 1,
+//         scrollTrigger: {
+//             trigger: '#companies_logo',
+//             start: 'center top',
+//             markers: true,
+//             scroller: '#main'
+//         }
+//     })
+// }
 
 
 customCursor();
 customCursorAnimation();
 animationOnThirdSection();
-animationOnAboutSection();
-animationOnSubscribeSection();
+// animationOnAboutSection();
+// animationOnSubscribeSection();
