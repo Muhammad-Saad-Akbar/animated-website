@@ -193,35 +193,68 @@ function animationOnThirdSection() {
 }
 
 // About section animation
-// function animationOnAboutSection() {
-//     gsap.from('#about_section', {
-//         opacity: 0,
-//         duration: 1,
-//         scrollTrigger: {
-//             trigger: '#content',
-//             start: '90% top',
-//             markers: true,
-//             scroller: '#main'
-//         }
-//     })
-// }
+function animationOnAboutSection() {
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 1024px)", () => {
+        gsap.from("#about_section", {
+            opacity: 0,
+            duration: 1,
+            scrollTrigger: {
+                trigger: "#content",
+                start: "80% top",
+                markers: true,
+                scroller: "#main"
+            }
+        });
+    });
+
+    mm.add("(max-width: 1023px)", () => {
+        gsap.from("#about_section", {
+            opacity: 0,
+            duration: 1,
+            scrollTrigger: {
+                trigger: "#about_section",
+                start: "top 52%",
+                markers: true,
+                scroller: "#main"
+            }
+        });
+    });
+}
 // Subscribe section animation
-// function animationOnSubscribeSection() {
-//     gsap.from('#subscribe', {
-//         opacity: 0,
-//         duration: 1,
-//         scrollTrigger: {
-//             trigger: '#companies_logo',
-//             start: 'center top',
-//             markers: true,
-//             scroller: '#main'
-//         }
-//     })
-// }
+function animationOnSubscribeSection() {
+    let mm = gsap.matchMedia();
+    mm.add("(min-width: 1024px)", () => {
+        gsap.from('#subscribe', {
+            opacity: 0,
+            duration: 1,
+            scrollTrigger: {
+                trigger: '#companies_logo',
+                start: 'center top',
+                markers: true,
+                scroller: '#main'
+            }
+        })
+    });
+
+    mm.add("(max-width: 1023px)", () => {
+        gsap.from("#subscribe", {
+            opacity: 0,
+            duration: 1,
+            scrollTrigger: {
+                trigger: "#about_section",
+                start: "50% 50%",
+                markers: true,
+                scroller: "#main"
+            }
+        });
+    });
+}
 
 
 customCursor();
 customCursorAnimation();
 animationOnThirdSection();
-// animationOnAboutSection();
-// animationOnSubscribeSection();
+animationOnAboutSection();
+animationOnSubscribeSection();
