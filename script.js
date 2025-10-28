@@ -5,29 +5,29 @@ window.addEventListener("load", () => {
     const tl = gsap.timeline();
 
     // Curtain slides up
-    // tl.to(counter, {
-    //     value: 100,
-    //     duration: 2,
-    //     ease: "power4.inOut",
-    //     onUpdate: () => {
-    //         percentText.textContent = Math.floor(counter.value) + "%";
-    //     }
-    // });
-    //
-    // tl.to("#preloader", {
-    //     yPercent: -100,
-    //     delay: 0.5,
-    //     opacity: 0.8,
-    //     duration: 1.5,
-    //     ease: "power4.inOut"
-    // })
-    tl.from('#nav', {
-        y: '-10',
-        delay: -0.8,
+    tl.to(counter, {
+        value: 100,
+        duration: 1.7,
+        ease: "power4.inOut",
+        onUpdate: () => {
+            percentText.textContent = Math.floor(counter.value) + "%";
+        }
+    });
+
+    tl.to("#preloader", {
+        yPercent: -100,
+        delay: 0.5,
+        opacity: 0.8,
         duration: 1.5,
-        opacity: 0,
-        ease: Expo.easeInOut
+        ease: "power4.inOut"
     })
+    .from('#nav', {
+            y: '-10',
+            delay: -0.8,
+            duration: 1.5,
+            opacity: 0,
+            ease: Expo.easeInOut
+        })
         .to('.text_animation', {
             y: '0',
             duration: 2,
@@ -152,32 +152,32 @@ document.querySelectorAll('.elem').forEach(function (elem) {
         }, 100)
     })
 })
-// ScrollTrigger.matchMedia({
-//     "(max-width: 767px)": function () {
-//         document.querySelectorAll(".waveCard").forEach(function (card, index) {
-//             // Create the tween and store it in a variable
-//             const floatTween = gsap.to(card, {
-//                 y: -20,
-//                 duration: 1.5,
-//                 ease: "power1.inOut",
-//                 repeat: -1,
-//                 yoyo: true,
-//                 paused: true,
-//                 delay: index * 0.3
-//             });
-//
-//             // Create a ScrollTrigger that controls it
-//             ScrollTrigger.create({
-//                 trigger: card,
-//                 start: "top 30%",
-//                 markers: true,
-//                 scroller: '#main',
-//                 onEnter: () => floatTween.play(),
-//                 onLeaveBack: () => floatTween.pause()
-//             });
-//         })
-//     }
-// });
+// Floating cards animation
+ScrollTrigger.matchMedia({
+    "(max-width: 1023px)": function () {
+        document.querySelectorAll(".waveCard").forEach(function (card, index) {
+            // Create the tween and store it in a variable
+            const floatTween = gsap.to(card, {
+                y: -20,
+                duration: 1.5,
+                ease: "power1.inOut",
+                repeat: -1,
+                yoyo: true,
+                paused: true,
+                delay: index * 0.3
+            });
+
+            // Create a ScrollTrigger that controls it
+            ScrollTrigger.create({
+                trigger: card,
+                start: "top 58%",
+                scroller: '#main',
+                onEnter: () => floatTween.play(),
+                onLeaveBack: () => floatTween.pause()
+            });
+        })
+    }
+});
 
 // Third section animation
 function animationOnThirdSection() {
@@ -203,7 +203,6 @@ function animationOnAboutSection() {
             scrollTrigger: {
                 trigger: "#content",
                 start: "80% top",
-                markers: true,
                 scroller: "#main"
             }
         });
@@ -215,8 +214,7 @@ function animationOnAboutSection() {
             duration: 1,
             scrollTrigger: {
                 trigger: "#about_section",
-                start: "top 52%",
-                markers: true,
+                start: "top 57%",
                 scroller: "#main"
             }
         });
@@ -231,8 +229,7 @@ function animationOnSubscribeSection() {
             duration: 1,
             scrollTrigger: {
                 trigger: '#companies_logo',
-                start: 'center top',
-                markers: true,
+                start: '40% top',
                 scroller: '#main'
             }
         })
@@ -244,8 +241,7 @@ function animationOnSubscribeSection() {
             duration: 1,
             scrollTrigger: {
                 trigger: "#about_section",
-                start: "50% 50%",
-                markers: true,
+                start: "56% 50%",
                 scroller: "#main"
             }
         });
