@@ -15,6 +15,8 @@
     --color-blue-500: oklch(62.3% 0.214 259.815);
     --color-blue-800: oklch(42.4% 0.199 265.638);
     --color-blue-900: oklch(37.9% 0.146 265.522);
+    --color-pink-700: oklch(52.5% 0.223 3.958);
+    --color-rose-700: oklch(51.4% 0.222 16.935);
     --color-gray-50: oklch(98.5% 0.002 247.839);
     --color-gray-100: oklch(96.7% 0.003 264.542);
     --color-gray-200: oklch(92.8% 0.006 264.531);
@@ -860,6 +862,12 @@
   .text-gray-900 {
     color: var(--color-gray-900);
   }
+  .text-pink-700 {
+    color: var(--color-pink-700);
+  }
+  .text-rose-700 {
+    color: var(--color-rose-700);
+  }
   .text-white {
     color: var(--color-white);
   }
@@ -1105,6 +1113,21 @@
   .max-md\:static {
     @media (width < 48rem) {
       position: static;
+    }
+  }
+  .max-md\:bottom-7\.5 {
+    @media (width < 48rem) {
+      bottom: calc(var(--spacing) * 7.5);
+    }
+  }
+  .max-md\:bottom-8 {
+    @media (width < 48rem) {
+      bottom: calc(var(--spacing) * 8);
+    }
+  }
+  .max-md\:bottom-9 {
+    @media (width < 48rem) {
+      bottom: calc(var(--spacing) * 9);
     }
   }
   .max-md\:mx-auto {
@@ -1537,6 +1560,16 @@
       padding-left: calc(var(--spacing) * 16);
     }
   }
+  .max-md\:pl-17 {
+    @media (width < 48rem) {
+      padding-left: calc(var(--spacing) * 17);
+    }
+  }
+  .max-md\:pl-19 {
+    @media (width < 48rem) {
+      padding-left: calc(var(--spacing) * 19);
+    }
+  }
   .max-md\:pl-20 {
     @media (width < 48rem) {
       padding-left: calc(var(--spacing) * 20);
@@ -1775,6 +1808,11 @@
   .md\:bottom-2 {
     @media (width >= 48rem) {
       bottom: calc(var(--spacing) * 2);
+    }
+  }
+  .md\:bottom-4\.5 {
+    @media (width >= 48rem) {
+      bottom: calc(var(--spacing) * 4.5);
     }
   }
   .md\:mt-2 {
@@ -2084,6 +2122,12 @@
   .md\:text-\[10vw\] {
     @media (width >= 48rem) {
       font-size: 10vw;
+    }
+  }
+  .md\:tracking-wide {
+    @media (width >= 48rem) {
+      --tw-tracking: var(--tracking-wide);
+      letter-spacing: var(--tracking-wide);
     }
   }
   .lg\:bottom-4\.5 {

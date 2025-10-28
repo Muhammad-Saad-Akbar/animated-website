@@ -21,7 +21,7 @@ window.addEventListener("load", () => {
         duration: 1.5,
         ease: "power4.inOut"
     })
-    .from('#nav', {
+        .from('#nav', {
             y: '-10',
             delay: -0.8,
             duration: 1.5,
