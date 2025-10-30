@@ -88,7 +88,9 @@ let secondTimeOut;
 // custom cursor
 function customCursor(xScale, yScale) {
     window.addEventListener('mousemove', function (details) {
-        document.querySelector('#mini_circle').style.transform = `translate(${details.clientX}px, ${details.clientY}px) scale(${xScale}, ${yScale})`
+        const miniCircle = document.querySelector('#mini_circle');
+        miniCircle.style.transform = `translate(${details.clientX}px, ${details.clientY}px) scale(${xScale}, ${yScale})`;
+        miniCircle.classList.add('opacity-100');
     })
 }
 
